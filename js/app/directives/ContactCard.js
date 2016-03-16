@@ -1,3 +1,15 @@
+function CaseController($scope) {
+    $scope.name=$scope.name.toLowerCase();
+    $scope.email=$scope.email.toLowerCase();
+    $scope.phone=$scope.phone.toLowerCase();
+    $scope.username=$scope.username.toLowerCase();
+}
+ 
+angular
+    .module('app')
+    .controller('CaseController', CaseController);
+
+
 function ContactCard() {
 	return {
 		scope: {
@@ -19,7 +31,8 @@ function ContactCard() {
 				'<span class="username">{{ username }}</span>',
 			'</div>'
 		].join(''),
-		restrict: 'E'
+		restrict: 'E',
+		controller: 'CaseController as ctrl'
 	};
 }
 
